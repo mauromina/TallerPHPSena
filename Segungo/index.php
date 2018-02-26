@@ -6,7 +6,7 @@
   </head>
   <body>
   <div class="container-fluid">
-    <h1>Primer Punto</h1>
+    <h1>Ferretería</h1>
     <p>Determina mayor y menor de una lista de números </p>
     <p>Digite los cinco numeros:</p>
 <?php
@@ -15,21 +15,22 @@
   $mayor = $arraynumerico[4];
   $menor = $arraynumerico[0];
 ?>
-    <h1>Numero Menor: <?php echo $menor; ?></h1>
-    <h1>Numero Mayor: <?php echo $mayor; ?></h1>
+    <h1>Nombre del Cliente: <?php echo $mayor; ?></h1>
+    <h1>Tipo de Cable: <?php echo $menor; ?></h1>
+    <h1>Total a Pagar: <?php echo $mayor; ?></h1>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <form action="index.php" method="post" class="form-inline">
        <br>
-         <label for="campo1"> Primer # </label>
-         <input type="number" name="primero" class="form-control" placeholder="primero" id="campo1"/>
+         <label for="campo1"> Nombre de Cliente: </label>
+         <input type="text" name="primero" class="form-control" placeholder="Nombre de Cliente" id="campo1"/>
        <br>
-         <label for="campo2"> Segundo # </label>
-         <input type="number"name="segundo" class="form-control" placeholder="segundo" id="campo2"/>
+         <label for="campo2"> Tipo de Cable: </label>
+         <input type="number"name="segundo" class="form-control" placeholder="Tipo de Cable" id="campo2"/>
        <br>
-         <label for="campo3"> Tercer # </label>
-         <input type="number" name="tercero" class="form-control" placeholder="tercero" id="campo3"/>
+         <label for="campo3"> Metros de Cable </label>
+         <input type="number" name="tercero" class="form-control" placeholder="Metros" id="campo3"/>
 
        <br>
          <label for="campo4"> Cuarto # </label>
