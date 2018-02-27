@@ -10,10 +10,16 @@
     <p>Determina mayor y menor de una lista de números </p>
     <p>Digite los cinco numeros:</p>
 <?php
+$mayor = 0;
+$menor = 0;
+if (isset($_POST['primero']))
+{
   $arraynumerico = array((int)$_POST['primero'], (int)$_POST['segundo'], (int)$_POST['tercero'], (int)$_POST['cuarto'], (int)$_POST['quinto']);
   sort($arraynumerico);
   $mayor = $arraynumerico[4];
   $menor = $arraynumerico[0];
+}
+
 ?>
     <h1>Numero Menor: <?php echo $menor; ?></h1>
     <h1>Numero Mayor: <?php echo $mayor; ?></h1>

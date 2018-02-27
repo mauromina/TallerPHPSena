@@ -10,36 +10,48 @@
     <p>Determina mayor y menor de una lista de números </p>
     <p>Digite los cinco numeros:</p>
 <?php
-  $arraynumerico = array((int)$_POST['primero'], (int)$_POST['segundo'], (int)$_POST['tercero'], (int)$_POST['cuarto'], (int)$_POST['quinto']);
-  sort($arraynumerico);
-  $mayor = $arraynumerico[4];
-  $menor = $arraynumerico[0];
+$nombre = '';
+$metros = 0;
+$tipo = "";
+$valor = 0;
+$total = 0;
+if (isset($_POST['nombre']))
+{
+  $nombre = $_POST['nombre'];
+  $metros = (int)$_POST['metros'];
+  $tipo = $_POST['tipo'];
+  $tipo = strtoupper($tipo);
+  $valor = 0;
+  $total = 0;
+    if($tipo == 'A'){
+      $valor = 20000;
+      $total = $valor * $metros;
+    }
+    if($tipo == 'B'){
+      $valor = 35000;
+      $total = $valor * $metros;
+    }
+}
+
+
 ?>
-    <h1>Nombre del Cliente: <?php echo $mayor; ?></h1>
-    <h1>Tipo de Cable: <?php echo $menor; ?></h1>
-    <h1>Total a Pagar: <?php echo $mayor; ?></h1>
+    <h1>Nombre del Cliente: <?php echo $nombre; ?></h1>
+    <h1>Tipo de Cable: <?php echo $tipo; ?></h1>
+    <h1>Valor por metro: <?php echo $metros; ?></h1>
+    <h1>Costo Total: <?php echo $total; ?></h1>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <form action="index.php" method="post" class="form-inline">
        <br>
          <label for="campo1"> Nombre de Cliente: </label>
-         <input type="text" name="primero" class="form-control" placeholder="Nombre de Cliente" id="campo1"/>
+         <input type="text" name="nombre" class="form-control" placeholder="Nombre de Cliente" id="campo1"/>
        <br>
          <label for="campo2"> Tipo de Cable: </label>
-         <input type="number"name="segundo" class="form-control" placeholder="Tipo de Cable" id="campo2"/>
+         <input type="text"name="tipo" class="form-control" placeholder="Tipo de Cable" id="campo2"/>
        <br>
          <label for="campo3"> Metros de Cable </label>
-         <input type="number" name="tercero" class="form-control" placeholder="Metros" id="campo3"/>
-
-       <br>
-         <label for="campo4"> Cuarto # </label>
-         <input type="number" name="cuarto" class="form-control" placeholder= "cuarto" id="campo4"/>
-
-       <br>
-         <label for="campo5"> Quinto # </label>
-         <input type="number" name="quinto" class="form-control" placeholder="quinto" id="campo5" />
-       <br>
+         <input type="number" name="metros" class="form-control" placeholder="Metros" id="campo3"/>
        <button type="submit" class="btn btn-primary mb-2">Calcular</button>
       </form>
     </div>
