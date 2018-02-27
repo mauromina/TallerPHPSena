@@ -17,6 +17,7 @@
 ?>
     <h1>Numero Menor: <?php echo $menor; ?></h1>
     <h1>Numero Mayor: <?php echo $mayor; ?></h1>
+    <?php echo $_POST['segundo']; ?>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -27,18 +28,16 @@
        <br>
          <label for="campo2"> Segundo # </label>
          <input type="number"name="segundo" class="form-control" placeholder="segundo" id="campo2"/>
-       <br>
-         <label for="campo3"> Tercer # </label>
-         <input type="number" name="tercero" class="form-control" placeholder="tercero" id="campo3"/>
 
-       <br>
-         <label for="campo4"> Cuarto # </label>
-         <input type="number" name="cuarto" class="form-control" placeholder= "cuarto" id="campo4"/>
+         <?php
+         for ($x = 0; $x <= 10; $x++) {
 
-       <br>
-         <label for="campo5"> Quinto # </label>
-         <input type="number" name="quinto" class="form-control" placeholder="quinto" id="campo5" />
-       <br>
+             echo '<br>
+             <label for="campo2"> Segundo # </label>
+             <input type="number"name="segundo" class="form-control" placeholder="segundo" id="campo2"/>';
+         }
+         ?>
+
        <button type="submit" class="btn btn-primary mb-2">Calcular</button>
       </form>
     </div>
