@@ -6,34 +6,34 @@
   </head>
   <body>
   <div class="container-fluid">
-    <h1>Potencia de un Numero</h1>
+    <h1>Covertidor Kelvin y Farhenheit </h1>
 <?php
-$base = 0;
-$exponente = 0;
-$total = 0;
-if (isset($_POST['base']))
-{
-  $base = (int)$_POST['base'];
-  $exponente = (int)$_POST['exponente'];
-  $total = pow($base,$exponente);
 
+$grado = 0;
+if (isset($_POST['centigrados']))
+{
+    $grado = (int)$_POST['centigrados'];
+}
+
+function Kelvin($grado){
+    return (9 * ($grado/5)) + 32;
+}
+function Farhenheit($grado){
+    return $grado + 273;
 }
 
 
 ?>
-    <h1>Base: <?php echo $base; ?></h1>
-    <h1>Exponente: <?php echo $exponente; ?></h1>
-    <h1>Total: <?php echo $total; ?></h1>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <form action="index.php" method="post" class="form-inline">
        <br>
-         <label for="campo1"> Base: </label>
-         <input type="text" name="base" class="form-control" placeholder="Base" id="campo1"/>
+         <label for="campo1"> Ingrese Grados Centigrados: </label>
+         <input type="text" name="centigrados" class="form-control" placeholder="Centigrados" id="campo1"/>
        <br>
-         <label for="campo2"> Exponente: </label>
-         <input type="text"name="exponente" class="form-control" placeholder="exponente" id="campo2"/>
+            <p>Kelvin: <?php echo Kelvin($grado); ?> </p>
+            <p>Farhenheit: <?php echo Farhenheit($grado);?> </p>
        <br>
        <button type="submit" class="btn btn-primary mb-2">Calcular</button>
       </form>
