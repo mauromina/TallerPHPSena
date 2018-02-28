@@ -6,7 +6,7 @@
   </head>
   <body>
   <div class="container-fluid">
-    <h1>Covertidor Kelvin y Farhenheit </h1>
+    <h1> Factorial </h1>
 <?php
 
 $grado = 0;
@@ -15,12 +15,15 @@ if (isset($_POST['centigrados']))
     $grado = (int)$_POST['centigrados'];
 }
 
-function Kelvin($grado){
-    return (9 * ($grado/5)) + 32;
+function Factorial($grado){
+    $total = 1;
+    for ($i = 1; $i <= $grado; $i++) {
+        $total = $i * $total;
+    }
+    return $total;
+
 }
-function Farhenheit($grado){
-    return $grado + 273;
-}
+
 
 
 ?>
@@ -29,12 +32,12 @@ function Farhenheit($grado){
     <div class="form-group col-md-6">
       <form action="index.php" method="post" class="form-inline">
        <br>
-         <label for="campo1"> Ingrese Grados Centigrados: </label>
-         <input type="text" name="centigrados" class="form-control" placeholder="Centigrados°" id="campo1"/>
+         <label for="campo1"> Ingrese Numero: </label>
+         <input type="text" name="centigrados" class="form-control" placeholder="numero!" id="campo1"/>
        <br>
-          <p>Centigrados: <?php echo $grado; ?> °C</p>
-            <p>Kelvin: <?php echo Kelvin($grado); ?> °K</p>
-            <p>Farhenheit: <?php echo Farhenheit($grado);?> °F</p>
+            <p>Numero: <?php echo  $grado; ?>! </p>
+            <p>Factorial: <?php echo  Factorial($grado); ?>! </p>
+
        <br>
        <button type="submit" class="btn btn-primary mb-2">Calcular</button>
       </form>
